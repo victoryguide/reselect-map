@@ -39,6 +39,6 @@
     "typings-tester": "^0.3.2"
   },
   "peerDependencies": {
-    "reselect": "2.x || 3.x || 4.x"
+    "reselect": "2.x || 3.x || 4.x || 5.x"
   }
 }
