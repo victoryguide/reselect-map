@@ -12,7 +12,7 @@ describe("createArraySelector", () => {
   test("basic array selector", () => {
     const sel = createArraySelector(
       (state) => state,
-      (element) => element * 5
+      (element) => element * 5,
     );
 
     expect(sel([1, 2, 3, 4])).toEqual([5, 10, 15, 20]);
@@ -43,7 +43,7 @@ describe("createArraySelector", () => {
       (state) => state.numbers,
       (state) => state.mul1,
       (state) => state.mul2,
-      (element, mul1, mul2) => element * mul1 * mul2
+      (element, mul1, mul2) => element * mul1 * mul2,
     );
 
     let state = {
@@ -89,7 +89,7 @@ describe("createObjectSelector", () => {
   test("basic object selector", () => {
     const sel = createObjectSelector(
       (state) => state,
-      (element) => element * 5
+      (element) => element * 5,
     );
 
     expect(sel({ a: 1, b: 2 })).toEqual({ a: 5, b: 10 });
@@ -118,7 +118,7 @@ describe("createObjectSelector", () => {
       (state) => state.numbers,
       (state) => state.mul1,
       (state) => state.mul2,
-      (element, mul1, mul2) => element * mul1 * mul2
+      (element, mul1, mul2) => element * mul1 * mul2,
     );
 
     let state = {
@@ -164,7 +164,7 @@ describe("createObjectSelector", () => {
       (state) => state.numbers,
       (state) => state.mul1,
       (state) => state.mul2,
-      (element, mul1, mul2, key) => `${key}:${element * mul1 * mul2}`
+      (element, mul1, mul2, key) => `${key}:${element * mul1 * mul2}`,
     );
 
     let state = {
@@ -210,7 +210,7 @@ describe("createListSelector", () => {
   test("basic list selector", () => {
     const sel = createListSelector(
       (state) => state,
-      (element) => element * 5
+      (element) => element * 5,
     );
 
     expect(sel([1, 2, 3, 4])).toEqual([5, 10, 15, 20]);
@@ -241,7 +241,7 @@ describe("createListSelector", () => {
       (state) => state.numbers,
       (state) => state.mul1,
       (state) => state.mul2,
-      (element, mul1, mul2) => element * mul1 * mul2
+      (element, mul1, mul2) => element * mul1 * mul2,
     );
 
     let state = {
@@ -287,30 +287,30 @@ describe("createMapSelector", () => {
   test("basic map selector", () => {
     const sel = createMapSelector(
       (state) => state,
-      (element) => element * 5
+      (element) => element * 5,
     );
 
     expect(
       Immutable.is(
         sel(Immutable.Map({ a: 1, b: 2 })),
-        Immutable.Map({ a: 5, b: 10 })
-      )
+        Immutable.Map({ a: 5, b: 10 }),
+      ),
     ).toBeTruthy();
     expect(sel.recomputations()).toBe(2);
 
     expect(
       Immutable.is(
         sel(Immutable.Map({ a: 1, b: 2 })),
-        Immutable.Map({ a: 5, b: 10 })
-      )
+        Immutable.Map({ a: 5, b: 10 }),
+      ),
     ).toBeTruthy();
     expect(sel.recomputations()).toBe(2);
 
     expect(
       Immutable.is(
         sel(Immutable.Map({ a: 3, b: 4 })),
-        Immutable.Map({ a: 15, b: 20 })
-      )
+        Immutable.Map({ a: 15, b: 20 }),
+      ),
     ).toBeTruthy();
     expect(sel.recomputations()).toBe(4);
   });
@@ -319,7 +319,7 @@ describe("createMapSelector", () => {
 test("custom equality function", () => {
   const sel = createArraySelectorCreator(Immutable.is)(
     (state) => state,
-    (element) => element.get("v") * 5
+    (element) => element.get("v") * 5,
   );
 
   let a = Immutable.Map({ v: 1 });

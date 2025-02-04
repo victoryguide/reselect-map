@@ -30,13 +30,13 @@ const multiplier = (state) => state.multiplier;
 
 // reselect
 const mul1 = createSelector([numbers, multiplier], (numbers, multiplier) =>
-  numbers.map((n) => n * multiplier)
+  numbers.map((n) => n * multiplier),
 );
 
 // reselect-map
 const mul2 = createArraySelector(
   [numbers, multiplier],
-  (number, multiplier) => number * multiplier
+  (number, multiplier) => number * multiplier,
 );
 
 // Result: [5, 10, 15]
@@ -67,7 +67,7 @@ const exampleState = {
 const mul = createArraySelector(
   (state) => state.numbers,
   (state) => state.multiplier,
-  (number, multiplier) => number * multiplier
+  (number, multiplier) => number * multiplier,
 );
 
 console.log(mul(exampleState)); // [5, 10, 15]
@@ -88,7 +88,7 @@ const exampleState = {
 const mul = createObjectSelector(
   (state) => state.numbers,
   (state) => state.multiplier,
-  (number, multiplier, key) => `${key}:${number * multiplier}`
+  (number, multiplier, key) => `${key}:${number * multiplier}`,
 );
 
 console.log(mul(exampleState)); // { a: 'a:5', b: 'b:10' }
@@ -110,7 +110,7 @@ const exampleState = {
 const mul = createListSelector(
   (state) => state.numbers,
   (state) => state.multiplier,
-  (number, multiplier) => number * multiplier
+  (number, multiplier) => number * multiplier,
 );
 
 console.log(String(mul(exampleState))); // List [5, 10, 15]
@@ -132,7 +132,7 @@ const exampleState = {
 const mul = createMapSelector(
   (state) => state.numbers,
   (state) => state.multiplier,
-  (number, multiplier, key) => `${key}:${number * multiplier}`
+  (number, multiplier, key) => `${key}:${number * multiplier}`,
 );
 
 console.log(String(mul(exampleState))); // Map { "a": "a:5", "b": "b:10" }
@@ -151,7 +151,7 @@ import { createSelector } from "reselect";
 
 const expensiveSelector = createSelector(
   (state) => state.largeArray,
-  (largeArray) => largeArray.map(expensiveFunction)
+  (largeArray) => largeArray.map(expensiveFunction),
 );
 ```
 
