@@ -1,0 +1,10 @@
+name: Delete old packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delete-old-packages:
+    uses: victoryguide/vg-workflows/.github/workflows/delete-old-packages-npm.yaml@main
+    secrets:
+      gha-pkg-token: ${{ secrets.GHA_PKG_TOKEN }}
