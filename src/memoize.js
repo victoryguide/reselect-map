@@ -1,20 +1,20 @@
 export function memoizeMap(
   fn,
-  { mapper, unique = false, equalityCheck = defaultEqualityCheck }
+  { mapper, unique = false, equalityCheck = defaultEqualityCheck },
 ) {
   return memoizeWithCache(
     new CacheMap(fn, mapper, unique, equalityCheck),
-    equalityCheck
+    equalityCheck,
   );
 }
 
 export function memoizeList(
   fn,
-  { mapper, unique = false, equalityCheck = defaultEqualityCheck }
+  { mapper, unique = false, equalityCheck = defaultEqualityCheck },
 ) {
   return memoizeWithCache(
     new CacheSet(fn, mapper, unique, equalityCheck),
-    equalityCheck
+    equalityCheck,
   );
 }
 
