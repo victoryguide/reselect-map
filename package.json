@@ -1,6 +1,6 @@
 {
-  "name": "reselect-map",
-  "version": "0.0.1",
+  "name": "@victoryguide/reselect-map",
+  "version": "1.0.6",
   "description": "Selectors for mapping over collections.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/victoryguide/reselect-map.git"
+    "url": "git://github.com/victoryguide/reselect-map.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
