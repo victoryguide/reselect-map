@@ -48,5 +48,8 @@
   },
   "dependencies": {
     "globals": "^15.14.0"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
