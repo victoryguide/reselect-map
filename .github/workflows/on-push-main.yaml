@@ -30,5 +30,7 @@ jobs:
   new-release:
     uses: victoryguide/vg-workflows/.github/workflows/new-release-npm.yaml@main
     needs: tests
+    with:
+      ref: "master"
     secrets:
       gha-pkg-token: ${{ secrets.GHA_PKG_TOKEN }}
